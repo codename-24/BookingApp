@@ -1,27 +1,46 @@
-var items = document.getElementsByClassName('list-group-item');
-console.log(items);
-console.log(items[2]);
+//parent
+var itemList = document.querySelector('#items');
+console.log(itemList.parentElement);
+itemList.parentElement.style.backgroundColor = '#f4f4f4';
 
-for(var i=0; i<items.length;i++){
-    items[i].style.fontWeight = 'bold';
-}
-var li = document.getElementsByTagName('li');
-li[4].style.color = 'green';
-console.log(li[4]);
+//childNodes
+console.log(itemList.childNodes);
+console.log(itemList.firstChild);
+console.log(itemList.firstElementChild);
 
-var qs = document.querySelector('.list-group-item');
-qs.style.backgroundColor = 'red';
+console.log(itemList.lastChild);
+console.log(itemList.lastElementChild);
 
-var secondItem = document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.backgroundColor = '#f4f4f4';
+//siblings
+console.log(itemList.nextSibling);
+console.log(itemList.nextElementSibling);
 
-var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
-thirdItem.style.visibility = 'hidden';
+console.log(itemList.previousSibling);
 
-var qsa = document.querySelectorAll('.list-group-item');
-qsa[1].style.color = 'red';
+//create
+var newDiv = document.createElement('div');
+newDiv.className = 'hello';
+newDiv.id = 'hello1';
+newDiv.setAttribute('title','Hello Div');
+var newDivText = document.createTextNode('Hello World');
+newDiv.appendChild(newDivText);
+var container= document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+console.log(newDiv);
+container.insertBefore(newDiv, h1);
+newDiv.style.fontSize = '30px';
 
-var odd = document.querySelectorAll('.list-group-item:nth-child(odd)');
-for(var j=0;j<odd.length;j++){
-    odd[j].style.backgroundColor='green';
-}
+var newDiv2 = document.createElement('div');
+newDiv2.className = 'hello1';
+newDiv2.id = 'hello2';
+newDiv.setAttribute('title','Hello Div2');
+var newDivText2 = document.createTextNode('Hello 1');
+newDiv2.appendChild(newDivText2);
+
+var container2= document.querySelector('.title');
+var h2 = document.querySelector('header h2');
+console.log(newDiv2);
+container2.insertBefore(newDiv2, h2);
+newDiv2.style.fontSize = '30px';
+
+
